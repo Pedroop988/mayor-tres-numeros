@@ -1,27 +1,24 @@
-'''
-Deter,ina el mayor de tres numeros ingresados por el teclado
-'''
+"""
+Determina el mayor de tres números ingresados por el teclado
+"""
 
-numero1 = int(input("Ingrse el primer numero : "))
-numero2 = int(input("Ingrse el segundo numero : "))
-numero3 = int(input("Ingrse el tercer numero : "))
 
-if numero1>numero2:
-    temporal=numero1
-    numero1=numero2
-    numero2=temporal
+def intercambiar_valores(numero1, numero2):
+    return numero2, numero1  # Simplificación del intercambio
 
-if numero2>numero3:
-    temporal=numero2
-    numero2=numero3
-    numero3=temporal
 
-if numero1>numero2:
-    temporal=numero1
-    numero1=numero2
-    numero2=temporal
+numero1 = int(input("Ingresa el primer número: "))
+numero2 = int(input("Ingresa el segundo número: "))
+numero3 = int(input("Ingresa el tercer número: "))
 
-print(f"numeros ordenados: {numero1},{numero2},{numero3}")
+if numero1 > numero2:
+    numero1, numero2 = intercambiar_valores(numero1, numero2)
+
+if numero2 > numero3:
+    numero2, numero3 = intercambiar_valores(numero2, numero3)
+
+if numero1 > numero2:
+    numero1, numero2 = intercambiar_valores(numero1, numero2)
+
+print(f"Números ordenados: {numero1}, {numero2}, {numero3}")
 print(f"El mayor es {numero3}")
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
